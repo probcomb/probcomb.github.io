@@ -5,18 +5,17 @@
   <title>Conference Name</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font (minimal academic feel) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --accent: #b23a48;       /* softened Rutgers scarlet */
-      --accent-light: #f7e9eb;
-      --text: #222;
-      --muted: #666;
-      --bg: #f9f9f9;
+      --accent: #a44a3f;        /* warm terracotta */
+      --accent-soft: #f3e6e3;   /* warm panel background */
+      --bg: #fbf8f6;            /* warm off-white */
+      --text: #2a2a2a;
+      --muted: #6b6b6b;
+      --border: #e6dedb;
       --white: #ffffff;
-      --border: #e5e5e5;
     }
 
     html {
@@ -25,35 +24,35 @@
 
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
       background: var(--bg);
+      font-family: "Inter", sans-serif;
       color: var(--text);
       line-height: 1.65;
     }
 
-    /* HEADER NAVBAR */
+    /* HEADER (FULL WIDTH) */
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(255,255,255,0.95);
+      background: rgba(251,248,246,0.95);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
     }
 
     nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1rem;
+      width: 100%;
       display: flex;
       justify-content: center;
+      gap: 2rem;
+      padding: 0.9rem 1rem;
       flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
       color: var(--muted);
-      margin: 0.3rem 1rem;
       font-size: 0.95rem;
     }
 
@@ -61,57 +60,48 @@
       color: var(--accent);
     }
 
-    /* MAIN CONTAINER */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 6rem 1.2rem 2rem;
-    }
-
     /* HERO */
     .hero {
+      padding: 7rem 1.5rem 3rem;
       text-align: center;
-      margin-bottom: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .hero h1 {
       font-family: "Libre Baskerville", serif;
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
       font-weight: 400;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     .hero img {
       max-width: 100%;
-      border-radius: 6px;
+      border-radius: 8px;
       margin-top: 1rem;
     }
 
-    /* FULL-WIDTH SECTION HEADERS */
-    .section-header {
+    /* FULL-WIDTH SECTION BLOCKS */
+    .section {
       width: 100%;
-      background: var(--accent-light);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin: 3rem 0 1.5rem;
+      padding: 2.5rem 1.5rem;
     }
 
-    .section-header h2 {
+    .section-inner {
       max-width: 900px;
       margin: 0 auto;
-      padding: 0.8rem 1.2rem;
+    }
+
+    /* alternating warmth */
+    .section.alt {
+      background: var(--accent-soft);
+    }
+
+    h2 {
       font-family: "Libre Baskerville", serif;
-      font-size: 1.4rem;
       font-weight: 400;
       color: var(--accent);
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    p {
-      color: var(--text);
+      margin-bottom: 1rem;
     }
 
     /* GRID */
@@ -122,10 +112,17 @@
       margin-top: 1rem;
     }
 
-    /* CARDS (more minimal) */
+    /* SOFT CARDS */
     .card {
-      padding: 0.9rem 0.2rem;
-      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
     }
 
     .card h3 {
@@ -135,7 +132,7 @@
     }
 
     .card p {
-      margin: 0.2rem 0;
+      margin: 0.3rem 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -154,16 +151,16 @@
     .button {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
       text-decoration: none;
       font-size: 0.9rem;
-      border-radius: 4px;
     }
 
     .button:hover {
-      background: var(--accent-light);
+      opacity: 0.9;
     }
 
     footer {
@@ -189,32 +186,29 @@
   </nav>
 </header>
 
-<div class="container">
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Conference Name</h1>
-    <img src="conference-image.jpg" alt="Conference Image">
-  </div>
-
-  <!-- ABOUT -->
+<!-- HERO -->
+<div class="hero">
+  <h1>Conference Name</h1>
+  <img src="conference-image.jpg" alt="Conference Image">
 </div>
-<div class="section-header"><h2 id="about">About</h2></div>
-<div class="container">
-  <section>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+  <div class="section-inner">
+    <h2>About</h2>
     <p>
       This conference brings together researchers in combinatorics and related areas.
-      Include a short description of the themes, goals, and mathematical focus.
+      Include a short description of themes, goals, and mathematical focus.
     </p>
-  </section>
+  </div>
 </div>
 
 <!-- SPEAKERS -->
-<div class="section-header"><h2 id="speakers">Confirmed Speakers</h2></div>
-<div class="container">
-  <section>
+<div id="speakers" class="section alt">
+  <div class="section-inner">
+    <h2>Confirmed Speakers</h2>
+
     <div class="grid">
-
       <div class="card">
         <h3>Speaker Name</h3>
         <p>University Name</p>
@@ -226,42 +220,42 @@
         <p>University Name</p>
         <a href="#">website</a>
       </div>
-
     </div>
-  </section>
+
+  </div>
 </div>
 
 <!-- PROGRAM -->
-<div class="section-header"><h2 id="program">Program</h2></div>
-<div class="container">
-  <section>
+<div id="program" class="section">
+  <div class="section-inner">
+    <h2>Program</h2>
     <p>Schedule coming soon.</p>
-  </section>
+  </div>
 </div>
 
 <!-- VENUE -->
-<div class="section-header"><h2 id="venue">Venue & Travel</h2></div>
-<div class="container">
-  <section>
-    <p>Details about venue, travel, and accommodation.</p>
-  </section>
+<div id="venue" class="section alt">
+  <div class="section-inner">
+    <h2>Venue & Travel</h2>
+    <p>Details about venue, directions, and accommodations.</p>
+  </div>
 </div>
 
 <!-- REGISTRATION -->
-<div class="section-header"><h2 id="registration">Registration</h2></div>
-<div class="container">
-  <section>
-    <p>Please register using the form below.</p>
+<div id="registration" class="section">
+  <div class="section-inner">
+    <h2>Registration</h2>
+    <p>Please register using the link below.</p>
     <a class="button" href="https://forms.gle/YOUR-FORM-LINK">Register</a>
-  </section>
+  </div>
 </div>
 
 <!-- ORGANIZERS -->
-<div class="section-header"><h2 id="organizers">Organizers</h2></div>
-<div class="container">
-  <section>
+<div id="organizers" class="section alt">
+  <div class="section-inner">
+    <h2>Organizers</h2>
+
     <div class="grid">
-
       <div class="card">
         <h3>Organizer Name</h3>
         <p>University Name</p>
@@ -273,9 +267,9 @@
         <p>University Name</p>
         <a href="#">website</a>
       </div>
-
     </div>
-  </section>
+
+  </div>
 </div>
 
 <footer>
