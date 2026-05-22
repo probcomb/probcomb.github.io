@@ -4,7 +4,7 @@
   <title>Conference Name</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
 
   <style>
     :root {
@@ -272,7 +272,6 @@
 </div>
 
 <footer>
-  © 2026 Conference Name
 </footer>
 
 </body>
