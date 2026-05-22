@@ -1,0 +1,281 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conference Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+
+
+  <style>
+    :root {
+      --accent: #a44a3f;        /* warm terracotta */
+      --accent-soft: #f3e6e3;   /* warm panel background */
+      --bg: #fbf8f6;            /* warm off-white */
+      --text: #2a2a2a;
+      --muted: #6b6b6b;
+      --border: #e6dedb;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* HEADER (FULL WIDTH) */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(251,248,246,0.95);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.9rem 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 7rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 400;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    /* FULL-WIDTH SECTION BLOCKS */
+    .section {
+      width: 100%;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* alternating warmth */
+    .section.alt {
+      background: var(--accent-soft);
+    }
+
+    h2 {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* SOFT CARDS */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .card p {
+      margin: 0.3rem 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* BUTTON */
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#program">Program</a>
+    <a href="#venue">Venue & Travel</a>
+    <a href="#registration">Registration</a>
+    <a href="#organizers">Organizers</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Conference Name</h1>
+  <img src="conference-image.jpg" alt="Conference Image">
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+  <div class="section-inner">
+    <h2>About</h2>
+    <p>
+      This conference brings together researchers in combinatorics and related areas.
+      Include a short description of themes, goals, and mathematical focus.
+    </p>
+  </div>
+</div>
+
+<!-- SPEAKERS -->
+<div id="speakers" class="section alt">
+  <div class="section-inner">
+    <h2>Confirmed Speakers</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Speaker Name</h3>
+        <p>University Name</p>
+        <a href="#">website</a>
+      </div>
+
+      <div class="card">
+        <h3>Speaker Name</h3>
+        <p>University Name</p>
+        <a href="#">website</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<div id="program" class="section">
+  <div class="section-inner">
+    <h2>Program</h2>
+    <p>Schedule coming soon.</p>
+  </div>
+</div>
+
+<!-- VENUE -->
+<div id="venue" class="section alt">
+  <div class="section-inner">
+    <h2>Venue & Travel</h2>
+    <p>Details about venue, directions, and accommodations.</p>
+  </div>
+</div>
+
+<!-- REGISTRATION -->
+<div id="registration" class="section">
+  <div class="section-inner">
+    <h2>Registration</h2>
+    <p>Please register using the link below.</p>
+    <a class="button" href="https://forms.gle/YOUR-FORM-LINK">Register</a>
+  </div>
+</div>
+
+<!-- ORGANIZERS -->
+<div id="organizers" class="section alt">
+  <div class="section-inner">
+    <h2>Organizers</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Organizer Name</h3>
+        <p>University Name</p>
+        <a href="#">website</a>
+      </div>
+
+      <div class="card">
+        <h3>Organizer Name</h3>
+        <p>University Name</p>
+        <a href="#">website</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+</footer>
+
+</body>
+</html>
