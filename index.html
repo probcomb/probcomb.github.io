@@ -187,7 +187,18 @@
     <a href="#organizers">Organizers</a>
   </nav>
 </header>
+hero {
+  display: flex; /* This places the child elements side-by-side */
+  align-items: center; /* This vertically centers the text with the image */
+  justify-content: center; /* Optional: Centers the whole group horizontally */
+  gap: 20px; /* Adds space between the title and the image */
+}
 
+/* Optional: Ensure your image scales nicely */
+.hero img {
+  max-width: 300px; /* Adjust this to fit your preferred image size */
+  height: auto;
+}
 <!-- HERO -->
 <div class="hero">
   <h1>Probabilistic combinatorics before the retirement of Jeff Kahn</h1>
