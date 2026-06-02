@@ -92,6 +92,18 @@
       margin-top: 1rem;
     }
 
+    .hero-text-container {
+      text-align: left; /* Looks cleaner next to a side-by-side image */
+      flex: 1;
+    }
+
+    .hero-details {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0.5rem 0 0 0;
+      font-weight: 400;
+    }
+
     /* FULL-WIDTH SECTION BLOCKS */
     .section {
       width: 100%;
@@ -202,19 +214,29 @@
   text-decoration: underline;
 }
 
+
     @media (max-width: 768px) {
       .hero {
-        flex-direction: column;    /* Stacks the text and image vertically */
-        padding: 5rem 1.2rem 2rem; /* Tweaks padding so it sits nicely below the fixed header */
+        flex-direction: column;
+        padding: 5rem 1.2rem 2rem;
+      }
+      
+      .hero-text-container {
+        text-align: center; /* Re-centers text for stacked mobile view */
       }
 
       .hero h1 {
-        font-size: 1.8rem;         /* Scales down the large font so it fits mobile screens */
+        font-size: 1.8rem;
         margin-bottom: 0.5rem;
+      }
+
+      .hero-details {
+        font-size: 1rem;
+        margin-bottom: 1.5rem; /* Adds breathing room above the image on mobile */
       }
       
       .hero img {
-        margin-top: 0;             /* Resets margin for the stacked layout */
+        margin-top: 0;
       }
     }
 
@@ -235,7 +257,10 @@
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Probabilistic combinatorics before the retirement of Jeff Kahn</h1>
+  <div class="hero-text-container">
+    <h1>Probabilistic combinatorics before the retirement of Jeff Kahn</h1>
+    <p class="hero-details">October 8-10, 2026 &bull; Rutgers University</p>
+  </div>
   <img src="hill center.jpg" alt="Conference Image">
 </div>
 
