@@ -202,6 +202,22 @@
   text-decoration: underline;
 }
 
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;    /* Stacks the text and image vertically */
+        padding: 5rem 1.2rem 2rem; /* Tweaks padding so it sits nicely below the fixed header */
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;         /* Scales down the large font so it fits mobile screens */
+        margin-bottom: 0.5rem;
+      }
+      
+      .hero img {
+        margin-top: 0;             /* Resets margin for the stacked layout */
+      }
+    }
+
   </style>
 </head>
 
