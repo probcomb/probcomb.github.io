@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Schedule</title>
+    
+    <!-- Google Fonts import for Libre Baskerville -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #a44a3f;        /* warm terracotta */
+            --accent-soft: #f3e6e3;   /* warm panel background */
+            --bg: #fbf8f6;            /* warm off-white */
+            --text: #2a2a2a;
+            --muted: #6b6b6b;
+            --border: #e6dedb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Libre Baskerville", serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            color: var(--text);
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700; 
+        }
+
+        .pdf-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--accent);
+            transition: opacity 0.2s ease;
+        }
+
+        .pdf-link:hover {
+            opacity: 0.7;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .schedule-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .day-column {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .day-header {
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-title {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .day-location {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .event-block {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .event-block:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .time {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .event-name {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Sleek Triangle Dropdown Styling */
+        details {
+            margin-top: 0.25rem;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--muted);
+            list-style: none; /* Hides default marker in standard browsers */
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s ease;
+        }
+
+        /* Hides default marker in Safari */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover {
+            color: var(--accent);
+        }
+
+        summary::before {
+            content: "▶";
+            font-size: 0.65rem;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .abstract-content {
+            margin-top: 0.75rem;
+            padding: 1rem;
+            background-color: var(--accent-soft);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        
+        .abstract-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Conference Schedule</h1>
+        <a href="Conference_Schedule_Oct8-10_Public_v2.pdf" class="pdf-link" target="_blank">Download Conference_Schedule_Oct8-10_Public_v2.pdf</a>
+    </header>
+
+    <div class="schedule-grid">
+        <!-- Thursday -->
+        <div class="day-column">
+            <div class="day-header">
+                <h2 class="day-title">Thursday, October 8</h2>
+                <div class="day-location">Hyatt Hotel Brunswick Ballroom</div>
+            </div>
+            
+            <div class="event-block">
+                <span class="time">9:00 - 9:10 AM</span>
+                <div class="event-name">Opening remarks</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">9:10 - 10:10 AM</span>
+                <div class="event-name">Peter Winkler</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:10 - 10:40 AM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:40 - 11:10 AM</span>
+                <div class="event-name">Roy Meshulam</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">11:10 - 11:40 AM</span>
+                <div class="event-name">Alan Frieze</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">11:50 AM - 1:30 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Lunch</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">1:30 - 2:30 PM</span>
+                <div class="event-name">Paul Seymour</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">2:30 - 2:45 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">2:45 - 3:15 PM</span>
+                <div class="event-name">Fan Wei</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+            
+             <div class="event-block">
+                <span class="time">3:15 - 3:45 PM</span>
+                <div class="event-name">Jinyoung Park</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="day-column">
+            <div class="day-header">
+                <h2 class="day-title">Friday, October 9</h2>
+                <div class="day-location">Rutgers CAIT auditorium</div>
+            </div>
+            
+            <div class="event-block">
+                <span class="time">9:00 - 10:00 AM</span>
+                <div class="event-name">Gil Kalai</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:00 - 10:40 AM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:40 - 11:10 AM</span>
+                <div class="event-name">Penny Haxell</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">11:20 - 11:50 AM</span>
+                <div class="event-name">Ehud Friedgut</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">12:00 - 2:00 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Lunch</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">2:00 - 3:00 PM</span>
+                <div class="event-name">Jacob Fox</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">3:00 - 3:40 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">3:40 - 4:10 PM</span>
+                <div class="event-name">Wojciech Samotij</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+            
+            <div class="event-block">
+                <span class="time">4:20 - 4:50 PM</span>
+                <div class="event-name">TBC</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Saturday -->
+        <div class="day-column">
+            <div class="day-header">
+                <h2 class="day-title">Saturday, October 10</h2>
+                <div class="day-location">Rutgers CAIT auditorium</div>
+            </div>
+            
+            <div class="event-block">
+                <span class="time">9:00 - 10:00 AM</span>
+                <div class="event-name">Noga Alon</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:00 - 10:30 AM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">10:30 - 11:00 AM</span>
+                <div class="event-name">Nati Linial</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">11:20 - 11:50 AM</span>
+                <div class="event-name">Dhruv Mubayi</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">12:00 - 2:00 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Lunch</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">2:00 - 3:00 PM</span>
+                <div class="event-name">Avi Wigderson</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Long talk)
+                    </div>
+                </details>
+            </div>
+
+            <div class="event-block">
+                <span class="time">3:00 - 3:40 PM</span>
+                <div class="event-name" style="color: var(--muted); font-weight: normal;">Break</div>
+            </div>
+
+            <div class="event-block">
+                <span class="time">3:40 - 4:10 PM</span>
+                <div class="event-name">Hao Huang</div>
+                <details>
+                    <summary>title and abstract</summary>
+                    <div class="abstract-content">
+                        <div class="abstract-title">Talk Title</div>
+                        Abstract details will be added here. (Short talk)
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
